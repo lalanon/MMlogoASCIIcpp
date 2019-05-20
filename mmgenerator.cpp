@@ -7,24 +7,25 @@
 //
 // A "quick and dirty" brute forse logo generator.
 // By changing the logoLeters constant, the number of consecutive "M"s can be changed.
-// The logo is rbeing rendered directly to the screen, so no data structures are being used.
+// The logo is being rendered directly to the screen, so no data structures are being used.
 //
-//
+
 #include <iostream>
 
 using namespace std;
 
-const char solidSymbol = '*';
-const char emptySymbol = '-';
-const int logoLetters = 2;
 
 
 int main( int argc, char* argv[]){
 
-    int charWidth = 3;
+    const char solidSymbol = '*';
+    const char emptySymbol = '-';
+    const int logoLetters = 2;
+
+    int charWidth;
 
     while (true) {
-        cout << "Please enter an odd charachter width between 3 and 9999: ";
+        cout << "Please enter an odd number between 3 and 9999: ";
         cin >> charWidth;
         if ((charWidth > 2) && (charWidth < 10000) && (charWidth % 2 != 0)){
             break;
@@ -35,21 +36,21 @@ int main( int argc, char* argv[]){
         }
     }
 
-        for (int i = 0; i < (charWidth + 1)/2; i++) {
+        for (int i = 0; i < (charWidth + 1)/2; i++) { // upperHalf - 5 elements, 3 unique
         for (int repeater = 0; repeater < logoLetters; repeater++ ) {
-            for (int j = 0; j <= charWidth - i-1; j++) {
+            for (int j = 0; j <= charWidth - i-1; j++) { // upperOuterSpace
                 cout << emptySymbol;
             }
-            for (int j = 0; j <= charWidth + (i*2) -1; j++) {
+            for (int j = 0; j <= charWidth + (i*2) -1; j++) { // upperColumn
                 cout << solidSymbol;
             }
-            for (int j = 0; j <= charWidth - (i*2) -1; j++) {
+            for (int j = 0; j <= charWidth - (i*2) -1; j++) { // upperInnerSpace
                 cout << emptySymbol;
             }
-            for (int j = 0; j <= charWidth + (i*2) -1; j++) {
+            for (int j = 0; j <= charWidth + (i*2) -1; j++) { // upperColumn
                 cout << solidSymbol;
             }
-            for (int j = 0; j <= charWidth - i-1; j++) {
+            for (int j = 0; j <= charWidth - i-1; j++) { // upperOuterSpace
                 cout << emptySymbol;
             }
 
@@ -58,7 +59,7 @@ int main( int argc, char* argv[]){
         cout << endl;  
     }
 
-    for (int i = 0; i < (charWidth + 1)/2; i++) {
+    for (int i = 0; i < (charWidth + 1)/2; i++) { // lowerHalf - 7 elements, 4 unique
         for (int repeater = 0; repeater < logoLetters; repeater++ ) {
             for (int j = 0; j < (charWidth-1)/2-i; j++) { // lowerOuterSpace
                 cout << emptySymbol;
