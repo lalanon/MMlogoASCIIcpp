@@ -5,7 +5,7 @@
 // Author: Ivo Yordanov
 // lalanon@gmail.com
 //
-// A "quick and dirty" brute forse logo generator.
+// A "quick and dirty" brute force logo generator.
 // By changing the logoLeters constant, the number of consecutive "M"s can be changed.
 // The logo is being rendered directly to the screen, so no data structures are being used.
 //
